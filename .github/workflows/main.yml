@@ -1,0 +1,12 @@
+name: AutoRun
+on:
+  schedule:
+    - cron: '0 * * * *' # يشتغل كل ساعة
+  workflow_dispatch:    # زر تشغيل يدوي للتجربة
+jobs:
+  start:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run
+        run: python main.py
