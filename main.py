@@ -1,6 +1,3 @@
-import os
-# سطر التثبيت التلقائي - مهم جداً
-os.system("pip install requests pandas xlsxwriter lxml")
 
 import requests
 import pandas as pd
