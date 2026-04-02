@@ -20,7 +20,10 @@ def run_bot():
         for index, row in df.head(5).iterrows():
             summary += f"🔹 {row['Symbol']} | {row['Date']} | {row['Ratio']}\n"
 
+        # نسخة مبسطة جداً للتأكد من وصول الرسالة
+        summary = f"🔄 Stock Splits Update\nTime: {today}\n\nCheck the attached file for details."
         requests.post(f"https://api.telegram.org/bot{TOKEN}/sendMessage", 
+                      data={"chat_id": CHAT_ID, "text": summary})
                       data={"chat_id": CHAT_ID, "text": summary, "parse_mode": "Markdown"})
         
         output = io.BytesIO()
